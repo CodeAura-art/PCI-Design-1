@@ -2,21 +2,981 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>PCI Design</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PCI Design Home - Custom Blinds & Shades Dorval</title>
+  <meta name="description" content="Custom window blinds and shades made in Dorval, QC. Premium roller shades, zebra blinds, and motorized solutions for Greater Montréal.">
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      margin: 0;
+      font-family: 'Lexend', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: #2b2b2b;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    .top-bar {
+      background: #f8f9fa;
+      padding: 10px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+      font-size: 14px;
+      border-bottom: 1px solid #e0e0e0;
+      flex-wrap: wrap;
+    }
+
+    .top-bar-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .top-bar a {
+      color: #555;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .top-bar a:hover {
+      color: #D4AF37;
+    }
+
+    .lang-switch {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .lang-btn {
+      border: none;
+      background: transparent;
+      color: #555;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+      padding: 4px 10px;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+      font-family: 'Lexend', sans-serif;
+    }
+
+    .lang-btn.active {
+      background: #D4AF37;
+      color: #fff;
+    }
+
+    .lang-btn:hover:not(.active) {
+      color: #D4AF37;
+    }
+
+    .header {
+      background: #fff;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, #D4AF37, #F5E6A2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .tagline {
+      font-size: 11px;
+      color: #777;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      border-left: 2px solid #D4AF37;
+      padding-left: 15px;
+      line-height: 1.4;
+    }
+
+    .find-dealer-btn {
+      padding: 12px 32px;
+      background: linear-gradient(135deg, #D4AF37, #F1C40F);
+      color: #2c2c2c;
+      border: none;
+      border-radius: 999px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 4px 18px rgba(212, 175, 55, 0.3);
+      transition: all 0.3s;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-family: 'Lexend', sans-serif;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .find-dealer-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(212, 175, 55, 0.5);
+    }
+
+    .main-nav {
+      background: #1f2933;
+      padding: 0;
+    }
+
+    .nav-menu {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      list-style: none;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-menu > li {
+      position: relative;
+    }
+
+    .nav-menu > li > a {
+      display: block;
+      padding: 18px 28px;
+      color: #f9fafb;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      transition: all 0.3s;
+    }
+
+    .nav-menu > li > a:hover {
+      background: #111827;
+      color: #F5E6A2;
+    }
+
+    .dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #ffffff;
+      min-width: 250px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      display: none;
+      z-index: 1000;
+      border-radius: 0 0 8px 8px;
+    }
+
+    .nav-menu > li:hover .dropdown {
+      display: block;
+    }
+
+    .dropdown li a {
+      display: block;
+      padding: 12px 20px;
+      color: #333;
+      text-decoration: none;
+      font-size: 14px;
+      transition: all 0.3s;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .dropdown li:last-child a {
+      border-bottom: none;
+    }
+
+    .dropdown li a:hover {
+      background: #f8f9fa;
+      color: #D4AF37;
+      padding-left: 25px;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      padding: 80px 20px;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(17, 24, 39, 0.65), rgba(31, 41, 55, 0.60)), 
+                  url('https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/6d2d8b50-8c04-46f9-88e1-bb9b668970c4');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      position: relative;
+      z-index: 3;
+    }
+
+    .play-video-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 40px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(212, 175, 55, 0.6);
+      border-radius: 999px;
+      color: #F5E6A2;
+      font-weight: 600;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin-top: 20px;
+    }
+
+    .play-video-btn:hover {
+      background: rgba(212, 175, 55, 0.25);
+      border-color: #D4AF37;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+    }
+
+    .play-icon {
+      width: 0;
+      height: 0;
+      border-left: 12px solid #F5E6A2;
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      margin-left: 4px;
+    }
+
+    .video-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .video-modal.active {
+      display: flex;
+    }
+
+    .video-container {
+      position: relative;
+      max-width: 90%;
+      max-height: 90%;
+      width: 1200px;
+    }
+
+    .video-container video {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .close-video {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-size: 2rem;
+      cursor: pointer;
+      padding: 10px;
+      transition: color 0.3s;
+    }
+
+    .close-video:hover {
+      color: #D4AF37;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 24px;
+      font-weight: 800;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.6);
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+
+    .hero h1 .gold {
+      color: #F5E6A2;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 35px;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      padding: 18px 48px;
+      background: linear-gradient(135deg, #D4AF37, #F1C40F);
+      color: #111827;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border-radius: 999px;
+      box-shadow: 0 8px 26px rgba(212, 175, 55, 0.55);
+      transition: all 0.3s;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .hero-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(212, 175, 55, 0.75);
+    }
+
+    .intro-section {
+      background: linear-gradient(180deg, #f9fafb 0%, #ffffff 100%);
+      padding: 60px 40px;
+      text-align: center;
+    }
+
+    .intro-content {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .intro-content p {
+      font-size: 1.05rem;
+      color: #555;
+      margin-bottom: 15px;
+      line-height: 1.8;
+    }
+
+    .products-section {
+      padding: 80px 40px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.4rem;
+      margin-bottom: 60px;
+      color: #111827;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .section-title span {
+      background: linear-gradient(135deg, #D4AF37, #F1C40F);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .product-card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      overflow: hidden;
+      transition: all 0.4s;
+      cursor: pointer;
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 18px 45px rgba(0,0,0,0.16);
+      border-color: #D4AF37;
+    }
+
+    .product-image {
+      width: 100%;
+      height: 250px;
+      background: linear-gradient(135deg, #f9fafb 0%, #e5e7eb 100%);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .photo-placeholder {
+      background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: #6b7280;
+      font-weight: 600;
+      text-align: center;
+      padding: 20px;
+      border: 2px dashed #9ca3af;
+      width: 100%;
+      height: 100%;
+    }
+
+    .product-info {
+      padding: 25px;
+      text-align: center;
+    }
+
+    .product-info h3 {
+      color: #111827;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .product-link {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 26px;
+      background: transparent;
+      color: #D4AF37;
+      border: 2px solid #D4AF37;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .product-link:hover {
+      background: #D4AF37;
+      color: #111827;
+    }
+
+    .content-section {
+      padding: 60px 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .content-section h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #111827;
+    }
+
+    .content-section p {
+      color: #555;
+      line-height: 1.8;
+    }
+
+    .footer {
+      background: #111827;
+      color: #e5e7eb;
+      padding: 60px 40px 30px;
+      margin-top: 40px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #1f2933;
+      padding-top: 30px;
+      text-align: center;
+      color: #9ca3af;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 968px) {
+      .hero h1 { font-size: 2.2rem; }
+      .nav-menu { flex-direction: column; }
+      .top-bar { 
+        flex-direction: column; 
+        gap: 10px; 
+        text-align: center; 
+      }
+      .top-bar-links {
+        flex-direction: column;
+        gap: 8px;
+      }
+      .lang-switch { justify-content: center; }
+      .header { 
+        flex-direction: column; 
+        gap: 20px; 
+        text-align: center;
+      }
+      .logo-container { 
+        flex-direction: column; 
+        text-align: center; 
+      }
+      .tagline { 
+        border-left: none; 
+        border-top: 2px solid #D4AF37; 
+        padding: 10px 0 0 0; 
+      }
+      .section-title { font-size: 1.8rem; }
+      .products-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
-  <h1>PCI Design</h1>
-  <p>Custom blinds & interior solutions</p>
+  <div class="top-bar">
+    <div class="top-bar-links">
+      <a href="#dealer" data-i18n="top_dealer">Dealer Resources</a>
+      <a href="#order" data-i18n="top_order">Online Ordering</a>
+      <a href="tel:+15145915059" data-i18n="top_phone">Contact: (514) 591-5059</a>
+      <a href="tel:+18883356376" data-i18n="top_phone2">Contact: +1 (888) 335-6376</a>
+      <a href="mailto:pcidesign@bellnet.ca" data-i18n="top_email">Email: pcidesign@bellnet.ca</a>
+    </div>
+    <div class="lang-switch">
+      <button data-lang="en" class="lang-btn active" aria-label="English">EN</button>
+      <span style="color:#ccc; font-size:12px;">|</span>
+      <button data-lang="fr" class="lang-btn" aria-label="Français">FR</button>
+    </div>
+  </div>
 
-  <iframe
-    width="100%"
-    height="450"
-    src="https://www.youtube.com/embed/G0OvILYaVYw"
-    frameborder="0"
-    allowfullscreen>
-  </iframe>
+  <header class="header">
+    <div class="logo-container">
+      <div class="logo">PCI DESIGN</div>
+      <div class="tagline" data-i18n="tagline">The Leader in Innovation · Custom Blinds Since 2007</div>
+    </div>
+    <a href="tel:+15145915059" class="find-dealer-btn">
+      <span>📞</span>
+      <span>
+        <div data-i18n="btn_call_now">(514) 591-5059</div>
+        <div style="font-size: 10px; font-weight: 500; letter-spacing: 0.1em; margin-top: 2px;" data-i18n="find_dealer">Find a Dealer</div>
+      </span>
+    </a>
+  </header>
+
+  <nav class="main-nav" role="navigation">
+    <ul class="nav-menu">
+      <li>
+        <a href="#general" data-i18n="nav_general">General</a>
+        <ul class="dropdown">
+          <li><a href="#story" data-i18n="nav_story">Our Story</a></li>
+          <li><a href="#contact" data-i18n="nav_contact">Contact Us</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#products-section" data-i18n="nav_products">Products</a>
+        <ul class="dropdown">
+          <li><a href="#all" data-i18n="nav_all_products">All Products</a></li>
+          <li><a href="#roller" data-i18n="nav_roller">Roller Shades</a></li>
+          <li><a href="#zebra" data-i18n="nav_zebra">Zebra Blinds</a></li>
+          <li><a href="#verticals" data-i18n="nav_verticals">Verticals &amp; Blackouts</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#controls" data-i18n="nav_controls">Control Systems</a>
+        <ul class="dropdown">
+          <li><a href="#cordless" data-i18n="nav_cordless">Cordless</a></li>
+          <li><a href="#motorization" data-i18n="nav_motorization">Motorization</a></li>
+          <li><a href="#smart" data-i18n="nav_smart">Smart Home</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#inspiration" data-i18n="nav_inspiration">Inspiration</a>
+        <ul class="dropdown">
+          <li><a href="#gallery" data-i18n="nav_gallery">Photo Gallery</a></li>
+          <li><a href="#videos" data-i18n="nav_videos">Videos</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#resources" data-i18n="nav_resources">Resources</a>
+        <ul class="dropdown">
+          <li><a href="#measure" data-i18n="nav_measure">How To Measure</a></li>
+          <li><a href="#install" data-i18n="nav_install">Installation Guides</a></li>
+          <li><a href="#warranty" data-i18n="nav_warranty">Warranty</a></li>
+          <li><a href="#safety" data-i18n="nav_safety">Child Safety</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1 data-i18n="hero_title">
+        <span class="gold">PCI Design</span>
+      </h1>
+      <p data-i18n="hero_subtitle">
+        High‑end custom blinds &amp; shades for homes and commercial spaces across Greater Montréal.
+      </p>
+      <a href="#products-section" class="hero-cta" data-i18n="hero_cta">
+        Browse Our Collection
+      </a>
+      <button class="play-video-btn" id="playVideoBtn">
+        <div class="play-icon"></div>
+        <span data-i18n="play_video">Play</span>
+      </button>
+    </div>
+  </section>
+
+  <div class="video-modal" id="videoModal">
+    <div class="video-container">
+      <button class="close-video" id="closeVideo">&times;</button>
+      <video id="brandVideo" controls preload="metadata">
+        <source src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/bc80be78-0e15-441a-898c-97b63f39ca40" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
+  <section class="intro-section" id="products-section">
+    <div class="intro-content">
+      <p data-i18n="intro_1">We provide a range of styles and a wide variety of colours suitable for homes and commercial spaces across Greater Montréal.</p>
+      <p data-i18n="intro_2">High‑quality custom roller shades with options like blackout, solar light‑filtering and cordless lifts.</p>
+      <p data-i18n="intro_3">Lifetime warranties, expert consultations, <strong>FREE MEASUREMENT</strong> and competitive prices — directly from our Dorval factory.</p>
+    </div>
+  </section>
+
+  <section class="products-section" id="all">
+    <h2 class="section-title" data-i18n="products_title">Some of our most loved <span>window coverings</span></h2>
+    <div class="products-grid">
+      
+      <div class="product-card">
+        <div class="product-image">
+          <div class="photo-placeholder">
+            📸 Roller Shades
+          </div>
+        </div>
+        <div class="product-info">
+          <h3 data-i18n="card_roller_title">Roller Shades</h3>
+          <a href="#roller" class="product-link" data-i18n="card_learn_more">Learn More</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image" style="background-image: url('https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/b6385166-e36a-4f0c-bc68-b3dc106db63f'); background-size: cover; background-position: center;">
+        </div>
+        <div class="product-info">
+          <h3 data-i18n="card_zebra_title">Zebra Blinds</h3>
+          <a href="#zebra" class="product-link" data-i18n="card_learn_more">Learn More</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image">
+          <div class="photo-placeholder">
+            📸 Cordless Blinds
+          </div>
+        </div>
+        <div class="product-info">
+          <h3 data-i18n="card_cordless_title">Cordless Blinds &amp; Shades</h3>
+          <a href="#cordless" class="product-link" data-i18n="card_learn_more">Learn More</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image">
+          <div class="photo-placeholder">
+            📸 Verticals &amp; Blackouts
+          </div>
+        </div>
+        <div class="product-info">
+          <h3 data-i18n="card_verticals_title">Verticals &amp; Blackouts</h3>
+          <a href="#verticals" class="product-link" data-i18n="card_learn_more">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section" id="roller">
+    <h2>Roller Shades</h2>
+    <p>Premium roller shades available in blackout, solar, and light-filtering fabrics. Custom-made to fit your windows perfectly with motorization options available.</p>
+  </section>
+
+  <section class="content-section" id="zebra">
+    <h2>Zebra Blinds</h2>
+    <p>Innovative dual-layer shades that alternate between sheer and solid fabric bands, offering flexible light control and privacy options.</p>
+  </section>
+
+  <section class="content-section" id="cordless">
+    <h2>Cordless Blinds &amp; Shades</h2>
+    <p>Child-safe cordless operation systems for all our window coverings, providing clean aesthetics and enhanced safety.</p>
+  </section>
+
+  <section class="content-section" id="verticals">
+    <h2>Verticals &amp; Blackouts</h2>
+    <p>Vertical blinds ideal for large windows and sliding doors, with complete blackout options for bedrooms and media rooms.</p>
+  </section>
+
+  <section class="content-section" id="controls">
+    <h2>Control Systems</h2>
+    <p>Choose from manual, cordless, or motorized control systems to suit your lifestyle and budget.</p>
+  </section>
+
+  <section class="content-section" id="motorization">
+    <h2>Motorization</h2>
+    <p>Automated blinds and shades with remote control, smartphone app integration, and voice assistant compatibility.</p>
+  </section>
+
+  <section class="content-section" id="smart">
+    <h2>Smart Home Integration</h2>
+    <p>Connect your window coverings to Alexa, Google Home, or HomeKit for seamless smart home automation.</p>
+  </section>
+
+  <section class="content-section" id="resources">
+    <h2>Resources</h2>
+    <p>Access our comprehensive guides, videos, and documentation to help you choose, measure, and install your window coverings.</p>
+  </section>
+
+  <section class="content-section" id="measure">
+    <h2>How To Measure</h2>
+    <p>Follow our step-by-step measuring guide to ensure perfect fit. Free professional measurement service available in Greater Montréal.</p>
+  </section>
+
+  <section class="content-section" id="install">
+    <h2>Installation Guides</h2>
+    <p>Detailed installation instructions with photos and videos for all our products. Professional installation services also available.</p>
+  </section>
+
+  <section class="content-section" id="warranty">
+    <h2>Warranty</h2>
+    <p>All PCI Design products come with comprehensive lifetime warranty coverage on materials and craftsmanship.</p>
+  </section>
+
+  <section class="content-section" id="safety">
+    <h2>Child Safety</h2>
+    <p>We prioritize child safety with cordless options, breakaway cords, and compliance with all Canadian safety standards.</p>
+  </section>
+
+  <section class="content-section" id="general">
+    <h2>General</h2>
+    <p>Learn more about PCI Design, our history, values, and commitment to quality window covering manufacturing in Dorval, Quebec.</p>
+  </section>
+
+  <section class="content-section" id="story">
+    <h2>Our Story</h2>
+    <p>Since 2007, PCI Design has been manufacturing premium custom window coverings in Dorval, serving the Greater Montréal area with innovation and excellence.</p>
+  </section>
+
+  <section class="content-section" id="contact">
+    <h2>Contact Us</h2>
+    <p>Phone: (514) 591-5059<br>Phone: +1 (888) 335-6376<br>Email: pcidesign@bellnet.ca<br>Visit our Dorval showroom or request a free in-home consultation.</p>
+  </section>
+
+  <section class="content-section" id="dealer">
+    <h2>Dealer Resources</h2>
+    <p>Access dealer portals, product catalogs, pricing sheets, and training materials. Contact us to become an authorized PCI Design dealer.</p>
+  </section>
+
+  <section class="content-section" id="order">
+    <h2>Online Ordering</h2>
+    <p>Dealers can place orders 24/7 through our secure online ordering system. Fast turnaround and direct factory pricing.</p>
+  </section>
+
+  <section class="content-section" id="inspiration">
+    <h2>Inspiration</h2>
+    <p>Browse our gallery of completed projects and design ideas to inspire your next window treatment project.</p>
+  </section>
+
+  <section class="content-section" id="gallery">
+    <h2>Photo Gallery</h2>
+    <p>Explore real installations showcasing our products in residential and commercial settings across Greater Montréal.</p>
+  </section>
+
+  <section class="content-section" id="videos">
+    <h2>Videos</h2>
+    <p>Watch product demonstrations, installation tutorials, and customer testimonials to learn more about PCI Design solutions.</p>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-bottom">
+      © 2026 PCI Design – All rights reserved. | Made in Dorval, Quebec, Canada<br>
+      Code Aura
+    </div>
+  </footer>
+
+  <script>
+    const translations = {
+      en: {
+        top_dealer: "Dealer Resources",
+        top_order: "Online Ordering",
+        top_phone: "Contact: (514) 591-5059",
+        top_phone2: "Contact: +1 (888) 335-6376",
+        top_email: "Email: pcidesign@bellnet.ca",
+        tagline: "The Leader in Innovation · Custom Blinds Since 2007",
+        play_video: "Play",
+        btn_call_now: "(514) 591-5059",
+        find_dealer: "Find a Dealer",
+        brand_video_label: "Brand Video",
+        nav_general: "General",
+        nav_story: "Our Story",
+        nav_contact: "Contact Us",
+        nav_products: "Products",
+        nav_all_products: "All Products",
+        nav_roller: "Roller Shades",
+        nav_zebra: "Zebra Blinds",
+        nav_verticals: "Verticals & Blackouts",
+        nav_controls: "Control Systems",
+        nav_cordless: "Cordless",
+        nav_motorization: "Motorization",
+        nav_smart: "Smart Home",
+        nav_inspiration: "Inspiration",
+        nav_gallery: "Photo Gallery",
+        nav_videos: "Videos",
+        nav_resources: "Resources",
+        nav_measure: "How To Measure",
+        nav_install: "Installation Guides",
+        nav_warranty: "Warranty",
+        nav_safety: "Child Safety",
+        hero_title: "PCI Design",
+        hero_subtitle: "High‑end custom blinds & shades for homes and commercial spaces across Greater Montréal.",
+        hero_cta: "Browse Our Collection",
+        intro_1: "We provide a range of styles and a wide variety of colours suitable for homes and commercial spaces across Greater Montréal.",
+        intro_2: "High‑quality custom roller shades with options like blackout, solar light‑filtering and cordless lifts.",
+        intro_3: "Lifetime warranties, expert consultations, FREE MEASUREMENT and competitive prices — directly from our Dorval factory.",
+        products_title: "Some of our most loved window coverings",
+        card_roller_title: "Roller Shades",
+        card_zebra_title: "Zebra Blinds",
+        card_cordless_title: "Cordless Blinds & Shades",
+        card_verticals_title: "Verticals & Blackouts",
+        card_learn_more: "Learn More"
+      },
+      fr: {
+        top_dealer: "Ressources pour détaillants",
+        top_order: "Commandes en ligne",
+        top_phone: "Contact : (514) 591-5059",
+        top_phone2: "Contact : +1 (888) 335-6376",
+        top_email: "Courriel : pcidesign@bellnet.ca",
+        tagline: "Chef de file en innovation · Stores sur mesure depuis 2007",
+        play_video: "Play",
+        btn_call_now: "(514) 591-5059",
+        find_dealer: "Trouver un détaillant",
+        brand_video_label: "Vidéo de marque",
+        nav_general: "Général",
+        nav_story: "Notre histoire",
+        nav_contact: "Nous joindre",
+        nav_products: "Produits",
+        nav_all_products: "Tous les produits",
+        nav_roller: "Stores rouleaux",
+        nav_zebra: "Stores zébrés",
+        nav_verticals: "Verticaux & occultants",
+        nav_controls: "Systèmes de commande",
+        nav_cordless: "Sans cordon",
+        nav_motorization: "Motorisation",
+        nav_smart: "Maison intelligente",
+        nav_inspiration: "Inspiration",
+        nav_gallery: "Galerie photos",
+        nav_videos: "Vidéos",
+        nav_resources: "Ressources",
+        nav_measure: "Comment mesurer",
+        nav_install: "Guides d'installation",
+        nav_warranty: "Garantie",
+        nav_safety: "Sécurité des enfants",
+        hero_title: "PCI Design",
+        hero_subtitle: "Stores et toiles sur mesure pour résidences et espaces commerciaux dans le Grand Montréal.",
+        hero_cta: "Parcourir notre collection",
+        intro_1: "Nous offrons une gamme de styles et une grande variété de couleurs pour les maisons et les espaces commerciaux du Grand Montréal.",
+        intro_2: "Stores rouleaux sur mesure de haute qualité avec options occultantes, filtrant la lumière solaire et commandes sans cordon.",
+        intro_3: "Garantie à vie, consultations d'experts, MESURE GRATUITE et prix concurrentiels — directement de notre usine de Dorval.",
+        products_title: "Parmi nos habillages de fenêtres les plus appréciés",
+        card_roller_title: "Stores rouleaux",
+        card_zebra_title: "Stores zébrés",
+        card_cordless_title: "Stores et toiles sans cordon",
+        card_verticals_title: "Verticaux & occultants",
+        card_learn_more: "En savoir plus"
+      }
+    };
+
+    function applyLanguage(lang) {
+      const dict = translations[lang];
+      if (!dict) return;
+
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (dict[key]) {
+          if (el.tagName.toLowerCase() === "input" || el.tagName.toLowerCase() === "textarea") {
+            el.placeholder = dict[key];
+          } else {
+            el.innerHTML = dict[key].replace(/\n/g, '<br>');
+          }
+        }
+      });
+
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll(".lang-btn").forEach(btn => {
+        btn.classList.toggle("active", btn.getAttribute("data-lang") === lang);
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".lang-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const lang = btn.getAttribute("data-lang");
+          applyLanguage(lang);
+        });
+      });
+
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+          const targetId = this.getAttribute("href");
+          if (targetId.length > 1) {
+            const target = document.querySelector(targetId);
+            if (target) {
+              e.preventDefault();
+              target.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+          }
+        });
+      });
+
+      const playVideoBtn = document.getElementById('playVideoBtn');
+      const videoModal = document.getElementById('videoModal');
+      const closeVideo = document.getElementById('closeVideo');
+      const brandVideo = document.getElementById('brandVideo');
+
+      playVideoBtn.addEventListener('click', () => {
+        videoModal.classList.add('active');
+        brandVideo.play();
+      });
+
+      closeVideo.addEventListener('click', () => {
+        videoModal.classList.remove('active');
+        brandVideo.pause();
+        brandVideo.currentTime = 0;
+      });
+
+      videoModal.addEventListener('click', (e) => {
+        if (e.target === videoModal) {
+          videoModal.classList.remove('active');
+          brandVideo.pause();
+          brandVideo.currentTime = 0;
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
