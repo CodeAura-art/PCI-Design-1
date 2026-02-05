@@ -19,6 +19,20 @@
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
+/* ===== Photo Gallery ===== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
