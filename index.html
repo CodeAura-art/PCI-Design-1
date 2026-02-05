@@ -6,35 +6,9 @@
   <title>PCI Design Home - Custom Blinds & Shades Dorval</title>
   <meta name="description" content="Custom window blinds and shades made in Dorval, QC. Premium roller shades, zebra blinds, and motorized solutions for Greater Montréal.">
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 16px;
-  padding: 20px 0;
-}
-
-.gallery img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-}
-/* ===== Photo Gallery ===== */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px;
-  margin-top: 20px;
-}
-
-.gallery img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  object-fit: cover;
-}
 
   <style>
+    /* moved duplicated/stray CSS into this style block and removed broken text before <style> */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     
     body {
@@ -43,6 +17,23 @@
       color: #2b2b2b;
       background: #ffffff;
       line-height: 1.6;
+    }
+
+    /* ===== Photo Gallery ===== */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+      padding: 20px 0;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      object-fit: cover;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     }
 
     .top-bar {
@@ -831,18 +822,17 @@
     <h2>Photo Gallery</h2>
     <p>Explore real installations showcasing our products in residential and commercial settings across Greater Montréal.</p>
   <div class="gallery">
-  <img src="roller.1.jpeg" alt="Roller shade 1">
-  <img src="roller.2.jpeg" alt="Roller shade 2">
-  <img src="roller3.jpeg" alt="Roller shade 3">
-  <img src="roller4.jpeg" alt="Roller shade 4">
+  <img src="images/roller-1.jpeg" alt="Roller shade 1">
+  <img src="images/roller-2.jpeg" alt="Roller shade 2">
+  <img src="images/roller-3.jpeg" alt="Roller shade 3">
+  <img src="images/roller-4.jpeg" alt="Roller shade 4">
 
-  <img src="zebra.3pfabrics.jpeg" alt="Zebra fabrics">
-  <img src="zebra.casset.jpeg" alt="Zebra cassette">
-  <img src="zebra.dark.jpeg" alt="Zebra dark">
-  <img src="zebra.fabric grey.jpeg" alt="Zebra grey fabric">
+  <img src="images/zebra-3p-fabrics.jpeg" alt="Zebra fabrics">
+  <img src="images/zebra-cassette.jpeg" alt="Zebra cassette">
+  <img src="images/zebra-dark.jpeg" alt="Zebra dark">
+  <img src="images/zebra-fabric-grey.jpeg" alt="Zebra grey fabric">
 </div>
 </section>
-
 
   <section class="content-section" id="videos">
     <h2>Videos</h2>
